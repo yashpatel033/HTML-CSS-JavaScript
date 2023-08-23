@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url(fonts/Lato-Regular.ttf);
+}
+
+.container{
+    width: 1100px;
+    height: 900px;
+   
+}
+
+
+h1{
+    color: #333;
+    text-align: center;
+    margin: 100px auto 50px;
+    font-family: 'Lato';
+}
+
+.row{
+    width: 60%;
+    max-height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+. col{
+    flex-basis: 50%;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.card{
+    width: 270px;
+    height: 180px;
+    margin: auto;
+    perspective: 1000px;
+    cursor: pointer;
+    
+}
+
+.inner-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    ;
+}
+
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-front{
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(255,198,39,1);
+    border-radius: 30px;
+}
+
+.front-1{
+    background-image: url(Piston.png);
+}
+
+.front-2{
+    background-image: url(sparkplug.png);
+}
+
+.front-3{
+    background-image: url(crankshaft.png);
+}
+
+.front-4{
+    background-image: url(timingbelt.png);
+}
+
+
+.card-back{
+    background: rgba(255,198,39,1);
+    transform: rotateX(180deg);
+    border-radius: 30px;
+}
+
+.card:hover .inner-box{
+    transform: rotateX(-180deg);
+
+}
+
+p{
+    display: inline-block;
+    color: #000000;
+    padding-bottom: 10px;
+   font-size: 30px;
+   font-family: 'Lato';
+   font-weight: 700;
+   
+    margin-top: 70px;
+}

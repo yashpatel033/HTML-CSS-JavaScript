@@ -1,0 +1,130 @@
+<style>
+	body {
+	background-color: #f8fafc;
+}
+
+.container {
+	padding: 1rem;
+	max-width: 1000px;
+}
+
+.slider-wrapper {
+	position: relative;
+	max-width: 48rem;
+	margin: 0 auto;
+}
+
+.slider {
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.5rem;
+	-ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+	display: none;
+}
+
+.slide {
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+	position: relative;
+}
+
+.slide .overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.slider-nav {
+	display: flex;
+	column-gap: 0.5rem;
+	position: absolute;
+	bottom: 1.0rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+.slider-nav a {
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+	background-color: #000000;
+	opacity: 0.40;
+	transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+	opacity: 1;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Carousel</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section class="container">
+		<div class="slider-wrapper">
+			<div class="slider">
+				<div class="slide" id="slide-1" style="background-image: url('https://media.istockphoto.com/id/1384896175/photo/phoenix-arizona-usa-downtown-skyline-aerial.jpg?s=2048x2048&w=is&k=20&c=WCU0y_FjeslH5b_OTuv7lrX701tEmQANz_ywBsxrvUY='); background-size: cover;">
+					<div class="overlay">Phoenix Downtown</div>
+				</div>
+				<div class="slide" id="slide-2" style="background-image: url('https://media.istockphoto.com/id/1206989185/photo/palm-walk-in-asu-tempe-campus.jpg?s=2048x2048&w=is&k=20&c=GKXl6SPkmmtuY_Qq8fUZhVuydcTl4PAGIhqRyAI9caY='); background-size: cover;">
+					<div class="overlay">ASU Pal Walk</div>
+				</div>
+				<div class="slide" id="slide-3" style="background-image: url('https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80'); background-size: cover;">
+					<div class="overlay">Grand Canyon - HorseShoe Bend</div>
+				</div>
+				<div class="slide" id="slide-4" style="background-image: url('https://plus.unsplash.com/premium_photo-1675826774823-88bd1cf6809a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); background-size: cover;">
+					<div class="overlay">Image 4</div>
+				</div>
+				<div class="slide" id="slide-5" style="background-image: url('https://images.unsplash.com/photo-1636850788639-6a2a77992ddf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); background-size: cover;">
+					<div class="overlay">Image 5</div>
+				</div>
+				<div class="slide" id="slide-6" style="background-image: url('https://images.unsplash.com/photo-1529599087-bcf1dc4a7ae4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2016&q=80'); background-size: cover;">
+					<div class="overlay">Image 6</div>
+				</div>
+				<div class="slide" id="slide-7" style="background-image: url('https://images.unsplash.com/photo-1516926133025-705ee504386d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); background-size: cover;">
+					<div class="overlay">Image 7</div>
+				</div>
+				<div class="slide" id="slide-8" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'); background-size: cover;">
+					<div class="overlay">Image 8</div>
+				</div>
+				
+			</div>
+			<div class="slider-nav">
+				<a href="#slide-1"></a>
+				<a href="#slide-2"></a>
+				<a href="#slide-3"></a>
+				<a href="#slide-4"></a>
+				<a href="#slide-5"></a>
+				<a href="#slide-6"></a>
+				<a href="#slide-7"></a>
+				<a href="#slide-8"></a>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
